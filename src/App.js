@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import "./App.css";
 
-function App() {
+const App = () => {
+  // let message = 'hello world!'; 
+  const [message, setMessage] = useState('hello word') //message virou um state, setmessage serve para atualizar o state
+                                             //esse hello world é o valor inicial
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <>
+      <div className="container">{message}</div>
+      <button onClick={() => setMessage("iae pae")}>Mudar mensagem</button>
+    </> //como parametro, estamos setando o valor novo que queremos 
+  )
+};
 
-export default App;
+export default App; //exportar a funcao app 
+
+
+
+
+
+
+ //quando retornamos algo na função, no componente react, 
+ //a gente so pode retornar um elemento POR ISSO TEMOS QUE RENDERIZAR TUDO EM UMA DIV SO
+
+ // <> é fragments, podemos colocar isso al inves de <div></div>
+
+//a variavel normal com let quando alterada nao atualiza o componente, o state sim
+
